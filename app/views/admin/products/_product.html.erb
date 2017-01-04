@@ -1,0 +1,23 @@
+<tr>
+  <td class="col-sm-4  order-info" id="receiver-info">
+    <%= link_to product.name, [:admin, product] %>
+  </td>
+  <td class="col-sm-2 text-center">
+    <%= image_tag product.image.url %>
+  </td>
+  <td class="col-sm-2 text-center item-total-price ">
+    <div id= "cart-item-total-description">
+      <%= product.description %>
+    </div>
+  </td>
+  <td class="col-sm-2 text-center">
+    <%= product.price %>
+  </td>
+  <td class="col-sm-2 text-center">
+    <%= link_to "", [:admin, product], class: "glyphicon glyphicon-trash",
+      method: :delete, data: {confirm: t("you_sure") } %>
+  </td>
+  <td class="col-sm-4  order-info" id="receiver-info">
+    <%= link_to "", edit_admin_product_path(product), class: "glyphicon glyphicon-pencil" %>
+  </td>
+</tr>

@@ -1,0 +1,33 @@
+<% provide :title, t("create_product") %>
+<h1 class="col-md-8 col-md-offset-3"><%= t("create_product") %></h1>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_for [:admin, @product], method: :post, html: { multipart: true } do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", required: true %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_field :description, class: "form-control", required: true %>
+      </div>
+      <div class="form-group ">
+        <%= f.label :image %>
+        <%= f.file_field :image, class: "form-control col-md-2"  %>
+      </div>
+      <div class="form-group">
+        <%= f.label :quantity %>
+        <%= f.number_field :quantity, class: "form-control", required: true %>
+      </div>
+      <div class="form-group" >
+        <%= f.label :price %>
+        <%= f.text_field :price, class: "form-control", required: true %>
+      </div>
+      <div class="form-group">
+        <%= f.label :category_id %>
+        <%= f.select :category_id, options_for_select( @categories_leaf.collect{|cat|[cat.name, cat.id]}, class: "form-control" ) %>
+      </div>
+      <%= f.submit t("create_product"), class: "btn btn-primary btn-block" %>
+    <% end %>
+  </div>
+</div>

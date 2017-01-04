@@ -1,0 +1,29 @@
+<div class="row">
+  <h2 class="col-md-8 col-md-offset-3"><%= t ".list_orders" %></h2>
+
+  <table class="responstable">
+    <thead>
+      <tr class="info row">
+        <th class="col-md-2"><%= t ".quantity" %></th>
+        <th class="col-md-2"><%= t ".total_price" %></th>
+        <th class="col-md-2"><%= t ".name" %></th>
+        <th class="col-md-2"><%= t ".address" %></th>
+        <th class="col-md-2"><%= t ".phone" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @orders.any? %>
+        <% @orders.each do |order|%>
+          <tr class="row">
+            <td class="col-md-2"><%= order.total_quantity %></td>
+            <td class="col-md-2"><%= order.total_price %></td>
+            <td class="col-md-2"><%= order.receiver_name %></td>
+            <td class="col-md-2"><%= order.receiver_address %></td>
+            <td class="col-md-2"><%= order.receiver_phone %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+ <%= will_paginate  %>
+</div>

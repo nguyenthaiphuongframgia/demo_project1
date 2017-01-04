@@ -1,0 +1,16 @@
+<% provide :title, t("all_user") %>
+<h1><%= t("all_user") %></h1>
+<%= form_tag admin_users_path, method: "get" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+<% if @users.empty? %>
+  <%= t(".user_not_found") %>
+<% else  %>
+  <ul class="users" >
+    <%= render @users %>
+  </ul>
+  <%= will_paginate %>
+<% end %>

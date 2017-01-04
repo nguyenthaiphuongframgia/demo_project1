@@ -1,0 +1,28 @@
+<% provide :title, t("all_suggest") %>
+<h1><%= t("all_suggest") %></h1>
+<%= form_tag admin_suggest_products_path, method: "get" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", name: nil%>
+  </p>
+<% end %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="text-center"><%= t("product_name") %></th>
+      <th class="text-center"><%= t("image") %></th>
+      <th class="text-center"><%= t("description") %></th>
+      <th class="text-center"><%= t("price") %></th>
+      <th class="text-center"></th>
+      <th class="text-center"><%= t("status") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @suggest_products.empty? %>
+      <td><%= t("suggest_not_found") %></td>
+    <% else  %>
+      <%= render @suggest_products %>
+      <%= will_paginate @suggest_products%>
+    <% end %>
+  </tbody>
+</table>

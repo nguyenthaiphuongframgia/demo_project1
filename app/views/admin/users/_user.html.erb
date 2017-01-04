@@ -1,0 +1,6 @@
+<li>
+  <%= image_tag user.picture %>
+  <%= link_to user.name, [:admin, user] %>
+  <%= link_to "", [:admin, user], :class => "glyphicon glyphicon-trash",
+    method: :delete, data: {confirm: t("you_sure") } %>
+</li>

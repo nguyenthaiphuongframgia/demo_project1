@@ -1,0 +1,30 @@
+maximum:
+  name: 50
+  address: 255
+  phone: 11
+  password: 6
+  email: 255
+  content: 255
+
+default:
+  top_new_products: 12
+  top_order_products: 12
+  number_of_order: 0
+  recently: 12
+  same_category: 10
+  round: 1
+  min_product: 0
+  quantity_cart_item: 1
+
+minrate: 1
+maxrate: 5
+ratestep: 0.1
+one: 1
+weekday: 7
+date_format: "%Y-%m-%d"
+per_pages:
+  users: 5
+per_page:
+  suggest: 5
+  product: 10
+min_product: 1

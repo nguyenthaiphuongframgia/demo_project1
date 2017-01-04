@@ -1,0 +1,21 @@
+<tr>
+  <td class="col-sm-4  order-info" id="receiver-info">
+    <%= suggest_product.name %>
+  </td>
+  <td class="col-sm-2 text-center">
+    <%= image_tag suggest_product.image.url %>
+  </td>
+  <td class="col-sm-2 text-center item-total-price ">
+    <%= suggest_product.description %>
+  </td>
+  <td class="col-sm-2 text-center item-total-price ">
+    <%= suggest_product.price %>
+  </td>
+  <td><%= link_to "", [:admin, suggest_product], class:
+    "glyphicon glyphicon-remove", method: :delete, data: {confirm: t("you_sure") } %>
+  </td>
+  <td>
+    <%= link_to "", edit_admin_suggest_product_path(suggest_product), class:
+      "glyphicon glyphicon-ok", remote: true %>
+  </td>
+</tr>

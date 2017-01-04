@@ -1,0 +1,7 @@
+<div class="container-fluid">
+  <div class="container"><%= t ".today" %> : <%= Time.now.strftime(Settings.date_format) %></div>
+
+ <%= group_by_user %>
+ <br></br>
+ <%= group_by_order %>
+</div>

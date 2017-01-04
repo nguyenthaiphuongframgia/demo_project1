@@ -1,0 +1,17 @@
+
+<% provide :title, t("create_category") %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-1 margin_top">
+    <%= link_to "All Category", admin_categories_path %>
+  </div>
+  <div class="col-md-6">
+    <h1><%= t("create_category") %></h1>
+    <%= form_for [:admin, @category], method: :get  do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", required: true %>
+      </div>
+      <%= f.submit t("create_category"), class: "btn btn-primary btn-block" %>
+    <% end %>
+  </div>
+</div>

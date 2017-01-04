@@ -1,0 +1,31 @@
+<% provide :title, t("all_product") %>
+<h1><%= t("all_product") %> </h1>
+<div class="row">
+<div class="col-md-8">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="text-center"><%= t("product_name") %></th>
+      <th class="text-center"><%= t("image") %></th>
+      <th class="text-center"><%= t("description") %></th>
+      <th class="text-center"><%= t("price") %></th>
+      <th class="text-center"></th>
+      <th class="text-center"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @products %>
+    <%= will_paginate  %>
+  </tbody>
+</table>
+</div>
+<div class="col-md-4">
+ <div class="modal-body">
+              <%= form_tag admin_csv_index_path, multipart: true do %>
+                <%= file_field_tag :file %>
+                <%= submit_tag "submit", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+ </div>
+
+</div>

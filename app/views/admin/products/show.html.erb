@@ -1,0 +1,33 @@
+<% provide :title, @product.name %>
+<div class="row">
+<div class="col-md-10">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="text-center"><%= t("product_name") %></th>
+      <th class="text-center"><%= t("image") %></th>
+      <th class="text-center"><%= t("description") %></th>
+      <th class="text-center"><%= t("price") %></th>
+      <th class="text-center"></th>
+    </tr>
+ </thead>
+ <tbody>
+    <tr>
+  <td class="col-sm-4  order-info" id="receiver-info">
+    <%= @product.name %>
+  </td>
+  <td class="col-sm-2 text-center">
+    <%= image_tag @product.image.url %>
+  </td>
+  <td class="col-sm-2 text-center item-total-price ">
+    <div id= "cart-item-total-description">
+      <%= @product.description %>
+    </div>
+  </td>
+  <td class="col-sm-2 text-center">
+    <%= @product.price %>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
